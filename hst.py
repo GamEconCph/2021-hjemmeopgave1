@@ -30,6 +30,9 @@ def read_data():
         ('Aggro Shaman',1.35)],
                              columns = ['deck', 'playrate'])
 
+    # ensure that play rates sum to 100% 
+    playrates.playrate = playrates.playrate / playrates.playrate.sum()
+
     dat = [('No Minion Mage', 'Control Warlock', 53.60,  98857),
         ('No Minion Mage', 'Face Hunter', 32.11,  94130),
         ('No Minion Mage', 'Secret Paladin', 32.57,  62587),
